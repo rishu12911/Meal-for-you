@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Rubik:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans+Condensed:wght@300&family=Tangerine:wght@700&family=Taviraj:wght@200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200&family=Libre+Franklin:wght@100&family=Nunito:wght@300;400&display=swap");
+
+body{
+    background-image: url('./images/meal_image2.jpg');
+   background-size: cover;
+   box-sizing: border-box;
+   background-position: center;  
+   background-attachment: scroll;
+  height: 100vh;
+  position: relative;
+  font-family: 'Rubik',sans-serif;
+  color: whitesmoke;
+}
+
+
+  
+#container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.2rem;
+}
+
+header{
+    margin-top: 28px;
+    height: 50px;
+    font-size: 3rem;
+    color: #DCDCDC;
+    font-weight: 700;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+
+
+#show-fav-container{
+
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15%;
+
+}
+ #show-fav{
+  
+    transition: all .5s ease;
+    background-color:  rgba(11, 48, 48, 0.92);
+    color: #4ff3f5;
+    border: 3px solid white;
+    border-radius: 40px;
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 10px;
+    outline: none;
+    
+    height: 50px;
+    
+}
+#show-fav:hover {
+    color:  rgba(36, 92, 92, 0.92);
+    background-color: #DCDCDC;
+    cursor: pointer;
+}
+ 
+  
+
+#input-text{
+    min-height: 50px;
+    width: 70%;
+    border: none ;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.2);
+    text-indent: 10px; 
+    border-radius: 18px 18px 18px 18px;
+    transition: .3s;
+    color: #495057;
+    font: 500 1.5rem 'Josefin Sans', sans-serif;
+    background-color: rgba(45, 66, 66, 0.92);
+    color: rgb(247, 226, 223);
+    padding: 0 20px 0 20px;
+    line-height: 1.6rem;
+    
+}
+::placeholder{
+  
+    font-size: 1.5rem;
+    
+}
+
+
+#input-text:focus{
+    font: 500 1.5rem 'Josefin Sans', sans-serif;
+    outline: none;
+    line-height: 1.6rem;
+
+}
+
+
+
+
+/* SEARCH RESULTS */
+
+#search-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+    
+}
+
+
+#test{
+    position: absolute;
+    top: 50
+}
+
+/* LOADER */
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    margin: 8px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .card {
+    margin: 20px 10px 0 10px;
+    width: 318px;
+    height: 318px;
+    border-radius: 20px 20px 0 0;
+    border-color: #130591;
+    border-width: 100px;
+    box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    cursor: pointer;
+    transition: 0.4s;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+
+    color: darkgray;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+   
+    
+  }
+  
+
+  .title-wrapper{
+    width: 318px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px 0 10px;
+    border-radius: 0 0 40px 40px;
+    background-color: #495057;
+
+      
+
+  }
+.card_title {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 5px 0 0 0;
+    height: auto;
+    transition: color .15s ease-in-out;
+
+  
+
+  }
+
+  .card_title:hover{
+    cursor: pointer;
+    color: #D0D0D0;
+    transform: scale(1.009)
+
+  }
+  
+  
+  
+  .card:hover {
+    transform: scale(1.0175, 1.0175);
+    opacity: .85;
+    box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+      -5px -5px 30px 15px rgba(0,0,0,0.22);
+    cursor: default ;
+  }
+  .category{
+      text-align: center;
+      margin: 7px 0 7px 0;
+      font-weight: 500;
+      font-size: 1.2rem;
+     
+  }
+  .favourite-btn{
+    background: transparent;
+    color: #666;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 50px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: whitesmoke;
+    transition: transform .3s ease-in-out;
+}
+
+
+  .favourite-btn:hover{
+    color: #e51d5f;
+    transform: scale(1.175);
+  }
+
+.category img, span{
+  vertical-align: middle;
+}
+ 
+ .favourite-btn{
+    margin: 0;
+    -webkit-text-stroke: .5px black;
+    color: white;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+  }
+
+
+
+  
+  .is-fav-color{
+    color: #e51d5f;
+    
+  }
+  
+  @media all and (max-width: 768px) {
+    body{
+      background-image: url('./images/background-mobile.jpg');
+    }
+    #container{
+      margin-top: 10px;
+    }
+    .card-list {
+      /* On small screens, we are no longer using row direction but column */
+      flex-direction: column;
+    }
+    header{
+      font-size: 1.5rem;
+      margin-top: 15px;
+      height: 25px;
+    }
+    header img{
+      height: inherit;
+      width: inherit;
+      margin: 0;
+    }
+   #show-fav-container{
+      margin-top: 15px;
+      margin-right: 5.5%;
+
+    }
+   
+    #show-fav{
+      height: 40px;
+      font-size: 1rem;
+      padding: 10px;     
+      
+    }
+     #input-text{
+      min-height: 45px;
+      padding: 10px;
+      width: 90%;
+      line-height: 1;
+      font-size: 1.2rem;
+    }
+    #input-text:focus{
+      font: 1.2rem 'Josefin Sans', sans-serif;
+      outline: none;
+      line-height: 1;
+  
+  }
+    ::placeholder{
+  
+      font-size: 1.2rem;
+      
+  }
+  .lds-ring{
+    height: 80px;
+    width: 80px;
+    /* margin-left: auto; */
+  }
+  .favourite-btn{ 
+  font-size: 30px;
+  height: 28px;
+  width: 30px;
+  top: 20px;
+  right: 20px;
+}
+}
+
+
+/*---------------------------*/
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+}
+
+html {
+    font-size: 60.5%;
+}
+
+.mycontainer {
+    overflow-x: hidden;
+}
+
+
+
+
+.mycontainer .home {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mycontainer .home .header-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.mycontainer .home .header-container .logo {
+    padding-left: 1.5rem;
+}
+
+.mycontainer .home .header-container .logo h1 {
+    font-family: "Dancing Script", cursive;
+    font-weight: 600;
+    font-size: 3.5rem;
+}
+
+.mycontainer .home .header-container .logo h1 a {
+    color: #207ba8;
+    text-decoration: none;
+}
+
+
+
+.mycontainer .home .header-container input[type=text] {
+    width: 300px;
+    outline: 0;
+    font-size: 2rem;
+    padding: 1rem;
+    padding-left: 5rem;
+    border-radius: 3rem;
+    border: none;
+    border: 1px solid #207ba8;
+}
+
+.mycontainer .home .header-container .navbar.active {
+    display: block;
+}
+
+.mycontainer .home .header-container .navbar ul {
+    display: flex;
+}
+
+.mycontainer .home .header-container .navbar ul li {
+    margin-left: 2.3rem;
+    font-size: 2rem;
+    font-family: "Taviraj", serif;
+    font-weight: 600;
+}
+
+.mycontainer .home .header-container .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.mycontainer .home .header-container .navbar ul li a:hover {
+    transition: 0.5s;
+    color: #207ba8;
+}
+
+
+
+
+
+@media (max-width: 799.98px) {
+    .mycontainer .home .header-container .logo {
+        margin-left: 4rem;
+    }
+    .mycontainer .home .header-container .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50rem;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: none;
+        z-index: 100;
+        transition: all 1s;
+    }
+    .mycontainer .home .header-container .navbar ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 15%;
+    }
+    .mycontainer .home .header-container .navbar ul li {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        font-size: 3rem;
+    }
+    .mycontainer .home .header-container .navbar ul li a {
+        padding: 0 25px;
+        padding-bottom: 12px;
+        color: #fff;
+    }
+    .mycontainer .home .header-container .navbar-toggler {
+        display: block;
+        position: absolute;
+        height: 40px;
+        top: 5px;
+        left: 2rem;
+        background-color: transparent;
+        color: #207ba8;
+        z-index: 1000;
+        outline: none;
+        padding: 0 5px;
+        cursor: pointer;
+    }
+   
+  }
+
+
+
+  /*...............meal info css...................*/
+
+.mycontainer .recipe-container {
+  width: 95%;
+  height: auto;
+  margin: 1.3rem auto;
+  box-shadow: 1px 3px 15px 5px #a37c7c;
+  padding: 1rem 0;
+  margin-top: 10rem;
+}
+
+.mycontainer .recipe-container h2 {
+  color:#0b066b;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 2rem;
+  font-size: 3rem;
+}
+
+.mycontainer .recipe-container .image {
+  width: 65%;
+  height: 60rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.mycontainer .recipe-container .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mycontainer .recipe-container .recipe-info {
+  color:#130591;
+  width: 90%;
+  margin: 1rem auto;
+  text-align: center;
+  height: auto;
+  border: 1px solid #eee;
+  padding: 2rem 1rem;
+}
+
+.mycontainer .recipe-container .recipe-info h3 {
+  font-weight: 300;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: 1.3rem;
+  font-size: 3.5rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.mycontainer .recipe-container .recipe-info .ingredients {
+  height: auto;
+  margin-bottom: 4rem;
+}
+
+.mycontainer .recipe-container .recipe-info .ingredients ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-bottom: 1rem;
+}
+
+.mycontainer .recipe-container .recipe-info .ingredients ul li {
+  font-family: "Libre Franklin", sans-serif;
+  padding: 0.5rem 0;
+  letter-spacing: 1px;
+  margin: 0 1rem;
+  margin-bottom: 0.6rem;
+  text-transform: capitalize;
+  font-size: 2.2rem;
+}
+
+.mycontainer .recipe-container .recipe-info .description {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.mycontainer .recipe-container .recipe-info .description p {
+  line-height: 3.3rem;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+@media (max-width: 699.98px) {
+  .mycontainer .recipe-container .image {
+      width: 90%;
+  }
+  .mycontainer .recipe-container .recipe-info .ingredients ul {
+      grid-template-columns: auto auto;
+  }
+}
+
+
+/*meals info css end*/
